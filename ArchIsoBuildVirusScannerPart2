@@ -1,0 +1,40 @@
+Arch Linux using ArchISO to create a Bootable Virus scanner to a USB drive
+
+2.  cd to root directory and cd probaseline directory to change packages.x86_64 file.
+
+    Next we need to add virus scanner, network manager for wifi, a ntfs driver 
+    for scanning windows drive. 
+    List of software to add:
+    nano packages.x86_64 and add the list to bottom of packages.x86_64 file.
+linux-firmware
+networkmanager
+network-manager-applet
+clamav
+ntfs-3g
+nano
+intel-ucode
+amd-ucode
+xf86-video-qxl
+xf86-video-intel
+xf86-video-amdgpu
+xf86-video-nouveau
+    cd to airootfs directory in the probaseline directory to add boot and windows directory.
+     This creates the directories so we have mounts made during the ISO creation.
+    We use these as mount points to scan with clamav.
+cd airootfs
+mkdir root
+cd root
+mkdir boot
+mkdir windows
+    We are ready to create the ISO for the USB.
+cd
+cd archbuild
+./probaseline
+
+    This will create the ISO in the out directory. On my Asus X200ma I'll be here awhile until it finishes. 
+
+ 
+    
+
+    
+    

@@ -1,0 +1,30 @@
+Arch Linux using ArchISO to create a Bootable Virus scanner to a USB drive
+
+Using Openbox on a Asus X200ma laptop (my Old Laptop with WiFi not close to a plugin sometimes). 
+1. Switching to root user and Download ArchISO using pacman.
+   Make directories archbuild, probaseline, and proreleng.
+   Copy Baseline and Releng directories to probaseline and proreleng directories.
+   Moving to the archbuild directory and make work Directory and out Directory.
+
+   2 scripts to build a Baseline image and a Live image.
+
+     Build the baseline script in the Archbuild directory:
+      
+        mkarchiso -v -w /root/archbuild/work/ -o /root/archbuild/out/ /root/probaseline/
+      
+     make a file called buildbaseline.sh and make the file executable
+
+     Build the archlinux live script in the Archbuild directory:
+
+        mkarchiso -v -w /root/archbuild/work/ -o /root/archbuild/out/ /root/proreleng/
+
+     make a file called buildreleng.sh and make the file executable
+
+
+   1 script to test the build before writing it to a USB drive.
+     In the Archbuild directory cd to out directory and make a run script.
+
+        run_archiso -i arch*
+
+     Make a file called run.sh script and make it executable.
+      With this script we test your build before writing a USB drive. 

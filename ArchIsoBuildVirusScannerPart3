@@ -1,0 +1,31 @@
+Arch Linux using ArchISO to create a Bootable Virus scanner to a USB drive
+
+3. Testing the newly created ISO.
+cd
+cd archbuild
+cd out
+./run.sh
+   Once you get to the Logon screen use root and no password needed.
+   
+   Start the Network Manager:
+systemctl start NetworkManager
+   To add your Wifi network. If your computer is connected 
+   the network already you can skip ahead to freshclam.
+nmtui 
+   To update Clamav virus database type in:
+freshclam
+   Directory stucture looks like this:
+lsblk
+   Since we are in testing the actual content differs from booting from USB boot.
+   The commands for scanning the directories will be close to actual usage of the
+   scanner.
+cd ..
+clamscan --recursive --infected --bell home/
+
+Printed Report when finished  type shutdown now to close the Test
+
+
+
+
+
+      

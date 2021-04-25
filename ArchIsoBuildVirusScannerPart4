@@ -1,0 +1,33 @@
+Arch Linux using ArchISO to create a Bootable Virus scanner to a USB drive
+
+4. Booting to using the USB drive
+
+root
+systemctl start NetworkManager
+   Setup Wifi if needed.
+nmtui
+   Update Clamav
+freshclam
+   Mount boot and windows directories
+lsblk 
+   See you hard drive structure
+sda      8:0    0 465.8G  0 disk 
+├─sda1   8:1    0   100M  0 part   <--- boot directory
+├─sda2   8:2    0 240.4G  0 part   <--- windows directory
+├─sda3   8:3    0   100G  0 part   <--- Linux / mount directory 
+└─sda4   8:4    0 125.2G  0 part   <--- Linux Home directory
+sdb      8:16   1   7.5G  0 disk 
+├─sdb1   8:17   1   704M  0 part 
+├─sdb2   8:18   1    45M  0 part 
+└─sdb3   8:19   1   300K  0 part 
+
+  Mount boot and windows directories to boot and windows in the root directory
+mount /dev/sda1 boot/
+mount /dev/sda2 windows/
+   Will print out a report when done.
+clamscan --recursive --infected --bell boot/     
+   The windows directory has lots of directories so us can specify directories or scan the whole directory
+clamscan --recursive --infected --bell windows/
+   or just the Users directory by
+clamscan --recursive --infected --bell windows/Users
+

@@ -1,0 +1,21 @@
+
+
+
+Lots of ways to make your USB bootable
+
+
+ The command for dd is simple:  after if=arch just hit (TAB) key to print name and continue with rest of
+ command of=/dev/sdb bs=1M status=progress
+ 
+dd if=arch...iso of=/dev/sdb bs=1M status=progress   
+
+
+
+
+    I'am still learning this and by no means an expert but with all the lack of info out there I hope this 
+    helps someone.
+
+    Take Care and have a blessed day. Be safe
+    Avatar76er
+               Thanks to ArchLinux Team, SimpleScreenRecorder, All Techs with hints about ArchLinux to many to mention
+               All teacher at College and People who let me learn and buy computers. 
